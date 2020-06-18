@@ -1,0 +1,37 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-06-17 14:23:24
+ * @LastEditTime: 2020-06-17 14:28:42
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /github/player-video/source/flvjs/index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flvjs</title>
+
+  <script src="./js/flv.js"></script>
+</head>
+
+<body>
+  <video id="videoElement"></video>
+
+  <script>
+    if (flvjs.isSupported()) {
+      var videoElement = document.getElementById('videoElement');
+      var flvPlayer = flvjs.createPlayer({
+        type: 'flv',
+        url: 'http://example.com/flv/video.flv'
+      });
+      flvPlayer.attachMediaElement(videoElement);
+      flvPlayer.load();
+      flvPlayer.play();
+    }
+  </script>
+</body>
+
+</html>
